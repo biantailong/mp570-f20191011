@@ -1,171 +1,166 @@
 <!doctype html>
-<html class="no-js" lang="en" dir="ltr">
+<html ng-app="mobileApp" class="no-js" lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Foundation for Sites</title>
+
+
+    <script src="js/vendor/angular-1.7.8/angular.min.js"></script>
+    <script src="js/vendor/angular-1.7.8/angular-route.min.js"></script>
+
+
+
+    <!-- *Begin Font Awesome
+          <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+      -->
+      <!-- The font Awesome code below is several revisions back.
+            https://stackoverflow.com/questions/14698589/fontawesome-not-available-as-a-font-family
+            I discovered that it would work from an article on stack overflow. all code should at some point be updated to reflect the last calling syntax for font awesome
+            -->
+            <link href='http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.min.css' rel='stylesheet' type='text/css'>
+      <!-- *End Font Awesome -->
+
+
     <link rel="stylesheet" href="css/foundation.css">
     <link rel="stylesheet" href="css/app.css">
+    <link rel="stylesheet" href="css/nav.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/footer.css">
+
   </head>
   <body>
-    <div class="grid-container">
-      <div class="grid-x grid-padding-x">
-        <div class="large-12 cell">
-          <h1>Welcome to Foundation</h1>
-        </div>
-      </div>
+    <!-- Set up Off-canvas -->
 
-      <div class="grid-x grid-padding-x">
-        <div class="large-12 cell">
-          <div class="callout">
-            <h3>We&rsquo;re stoked you want to try Foundation! </h3>
-            <p>To get going, this file (index.html) includes some basic styles you can modify, play around with, or totally destroy to get going.</p>
-            <p>Once you've exhausted the fun in this document, you should check out:</p>
-            <div class="grid-x grid-padding-x">
-              <div class="large-4 medium-4 cell">
-                <p><a href="http://foundation.zurb.com/docs">Foundation Documentation</a><br />Everything you need to know about using the framework.</p>
-              </div>
-              <div class="large-4 medium-4 cell">
-                <p><a href="http://zurb.com/university/code-skills">Foundation Code Skills</a><br />These online courses offer you a chance to better understand how Foundation works and how you can master it to create awesome projects.</p>
-              </div>
-              <div class="large-4 medium-4 cell">
-                <p><a href="http://foundation.zurb.com/forum">Foundation Forum</a><br />Join the Foundation community to ask a question or show off your knowledge.</p>
-              </div>
-            </div>
-            <div class="grid-x grid-padding-x">
-              <div class="large-4 medium-4 medium-push-2 cell">
-                <p><a href="http://github.com/zurb/foundation">Foundation on Github</a><br />Latest code, issue reports, feature requests and more.</p>
-              </div>
-              <div class="large-4 medium-4 medium-pull-2 cell">
-                <p><a href="https://twitter.com/ZURBfoundation">@zurbfoundation</a><br />Ping us on Twitter if you have questions. When you build something with this we'd love to see it (and send you a totally boss sticker).</p>
-              </div>
-            </div>
+      <div class="off-canvas-wrapper">
+        <div class="off-canvas-wrapper-inner" data-off-canvas-wrapper>
+          <div class="off-canvas position-left" id="offCanvasLeft" data-off-canvas>
+            <!-- left off-canvas markup -->
+          </div>
+          <div class="off-canvas position-right" id="offCanvasRight" data-off-canvas data-position="right">
+            <!-- right off-canvas markup -->
+          </div>
+          <div class="off-canvas-content" data-off-canvas-content>
+            <!-- page content -->
           </div>
         </div>
       </div>
 
-      <div class="grid-x grid-padding-x">
-        <div class="large-8 medium-8 cell">
-          <h5>Here&rsquo;s your basic grid:</h5>
-          <!-- Grid Example -->
 
-          <div class="grid-x grid-padding-x">
-            <div class="large-12 cell">
-              <div class="primary callout">
-                <p><strong>This is a twelve cell section in a grid-x.</strong> Each of these includes a div.callout element so you can see where the cell are - it's not required at all for the grid.</p>
-              </div>
-            </div>
-          </div>
-          <div class="grid-x grid-padding-x">
-            <div class="large-6 medium-6 cell">
-              <div class="primary callout">
-                <p>Six cell</p>
-              </div>
-            </div>
-            <div class="large-6 medium-6 cell">
-              <div class="primary callout">
-                <p>Six cell</p>
-              </div>
-            </div>
-          </div>
-          <div class="grid-x grid-padding-x">
-            <div class="large-4 medium-4 small-4 cell">
-              <div class="primary callout">
-                <p>Four cell</p>
-              </div>
-            </div>
-            <div class="large-4 medium-4 small-4 cell">
-              <div class="primary callout">
-                <p>Four cell</p>
-              </div>
-            </div>
-            <div class="large-4 medium-4 small-4 cell">
-              <div class="primary callout">
-                <p>Four cell</p>
-              </div>
-            </div>
-          </div>
+    <!-- Fire Off-canvas -->
+    <button type="button" class="button" data-toggle="offCanvasLeft">Open Menu</button>
 
-          <hr />
 
-          <h5>We bet you&rsquo;ll need a form somewhere:</h5>
-          <form>
-            <div class="grid-x grid-padding-x">
-              <div class="large-12 cell">
-                <label>Input Label</label>
-                <input type="text" placeholder="large-12.cell" />
-              </div>
-            </div>
-            <div class="grid-x grid-padding-x">
-              <div class="large-4 medium-4 cell">
-                <label>Input Label</label>
-                <input type="text" placeholder="large-4.cell" />
-              </div>
-              <div class="large-4 medium-4 cell">
-                <label>Input Label</label>
-                <input type="text" placeholder="large-4.cell" />
-              </div>
-              <div class="large-4 medium-4 cell">
-                <div class="grid-x">
-                  <label>Input Label</label>
-                  <div class="input-group">
-                    <input type="text" placeholder="small-9.cell" class="input-group-field" />
-                    <span class="input-group-label">.com</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="grid-x grid-padding-x">
-              <div class="large-12 cell">
-                <label>Select Box</label>
-                <select>
-                  <option value="husker">Husker</option>
-                  <option value="starbuck">Starbuck</option>
-                  <option value="hotdog">Hot Dog</option>
-                  <option value="apollo">Apollo</option>
-                </select>
-              </div>
-            </div>
-            <div class="grid-x grid-padding-x">
-              <div class="large-6 medium-6 cell">
-                <label>Choose Your Favorite</label>
-                <input type="radio" name="pokemon" value="Red" id="pokemonRed"><label for="pokemonRed">Radio 1</label>
-                <input type="radio" name="pokemon" value="Blue" id="pokemonBlue"><label for="pokemonBlue">Radio 2</label>
-              </div>
-              <div class="large-6 medium-6 cell">
-                <label>Check these out</label>
-                <input id="checkbox1" type="checkbox"><label for="checkbox1">Checkbox 1</label>
-                <input id="checkbox2" type="checkbox"><label for="checkbox2">Checkbox 2</label>
-              </div>
-            </div>
-            <div class="grid-x grid-padding-x">
-              <div class="large-12 cell">
-                <label>Textarea Label</label>
-                <textarea placeholder="small-12.cell"></textarea>
-              </div>
-            </div>
-          </form>
-        </div>
 
-        <div class="large-4 medium-4 cell">
-          <h5>Try one of these buttons:</h5>
-          <p><a href="#" class="button">Simple Button</a><br/>
-          <a href="#" class="success button">Success Btn</a><br/>
-          <a href="#" class="alert button">Alert Btn</a><br/>
-          <a href="#" class="secondary button">Secondary Btn</a></p>
-          <div class="callout">
-            <h5>So many components, girl!</h5>
-            <p>A whole kitchen sink of goodies comes with Foundation. Check out the docs to see them all, along with details on making them your own.</p>
-            <a href="http://foundation.zurb.com/sites/docs/" class="small button">Go to Foundation Docs</a>
-          </div>
-        </div>
-      </div>
+
+
+
+
+
+
+    <!-- *Begin Nav -->
+    <div class="mobile-nav-bar title-bar">
+    <div class="title-bar-left">
+      <button class="menu-icon" type="button" data-toggle="offCanvasLeft"></button>
     </div>
+    <div class="title-bar-center">
+      <span class="title-bar-text">My Page</span>
+    </div>
+    <div class="title-bar-right">
+      <span class="title-bar-text">Actions</span>
+      <span class="title-bar-text"><a href="#"><i class="fa fa-home title-bar-logo"></i></a></span>
+    </div>
+  </div>
+  <!-- *End Nav -->
+
+  <!-- *Begin Content -->
+  <div ng-view></div>
+<!-- *End Content -->
+
+<!-- *Begin Footer -->
+<div class="mobile-bottom-bar">
+  <a href="#" class="footer-link">
+    <i class="fa fa-cog"></i> <span class='footer-text'>Settings</span>
+  </a>
+  <a href="#" class="footer-link">
+    <i class="fa fa-sign-out"></i> <span class='footer-text'>Log out</span>
+  </a>
+</div>
+<!-- *End Footer -->
+
+
 
     <script src="js/vendor/jquery.js"></script>
     <script src="js/vendor/what-input.js"></script>
     <script src="js/vendor/foundation.js"></script>
     <script src="js/app.js"></script>
+
+    <script>
+           var app = angular.module('mobileApp',['ngRoute']);
+           app.config(function($routeProvider) {
+             $routeProvider.when('/',
+               {
+                 controller:'CustomersController',
+                 templateUrl: 'app/views/main.html'
+               })
+             .when('/book',
+               {
+                 controller: 'BookController',
+                 templateUrl: 'app/views/book.html'
+               })
+               .when('/menu',
+                 {
+                   controller: 'MenuController',
+                   templateUrl: 'app/views/menu.html'
+                 })
+              .when('/flight_status',
+                 {
+                   controller: 'FlightStatusController',
+                   templateUrl: 'app/views/flight_status.html'
+                 })
+                 .when('/etfinals',
+                    {
+                      controller: 'ETFinalsController',
+                      templateUrl: 'app/views/etfinals.html'
+                    })
+              .when('/story',
+                 {
+                   controller: 'StoryController',
+                   templateUrl: 'app/views/story.html'
+                 })
+             .when('/adam',
+                {
+                  controller: 'AdamController',
+                  templateUrl: 'app/views/adam.html'
+                })
+           });
+           app.controller('BookController', function($scope){
+             $scope.customerID = 5;
+           });
+           app.controller('MenuController', function($scope){
+             $scope.customerID = 5;
+           });
+           app.controller('StoryController', function($scope){
+             $scope.customerID = 5;
+           });
+           app.controller('FlightStatusController', function($scope){
+             $scope.customerID = 5;
+           });
+           app.controller('ETFinalsController', function($scope){
+             $scope.customerID = 5;
+           });
+           app.controller('AdamController', function($scope){
+             $scope.customerID = 5;
+           });
+           app.controller('CustomersController', function($scope) {
+             $scope.customers = [
+                 {"id": 1, "name":"Ted", "total": 5.996},
+                 {"id": 2, "name":"Michelle", "total": 10.994},
+                 {"id": 3, "name":"Zed", "total": 10.99},
+                 {"id": 4, "name":"Tina", "total": 15.994}
+               ];
+             });
+         </script>
   </body>
 </html>
